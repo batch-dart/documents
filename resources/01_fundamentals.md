@@ -31,19 +31,16 @@ An `Event` is a very simple concept consisting of the following elements.
 ### 1.1.1. Job
 
 A `Job` is the largest unit of events.
-
 A `Job` event can have multiple `Step`s and multiple unscheduled `Job`s as branches, and the `Job` at the top level must be scheduled.
 
 ### 1.1.2. Step
 
 A `Step` is an intermediate unit of event between a `Job` and a `Task`.
-
 A `Step` can have multiple `Task`s and multiple `Step`s as branches.
 
 ### 1.1.3. Task
 
 A `Task` is the smallest unit of an `Event`.
-
 A `Task` can have multiple `Tasks` as branches.
 The `Task` defines the specific process at each step. For example, define the following.
 
@@ -142,7 +139,7 @@ The `ParallelTask` is a `Task` for parallel processing that inherits from and ex
 - The `invoke` method does not take `ExecutionContext` as an argument.
 - `ParallelTask` cannot define callback processing. Instead, define a callback if needed for `Parallel` events.
 
-The differences above stem from the difficulty of parallel processing. However, despite some technical limitations, the parallel processing offered by `Batch.dart` is very powerful.
+The differences above stem from the difficulty of parallel processing. However, despite some technical limitations, the parallel processing provided by `Batch.dart` is very powerful.
 
 Therefore, implement as follows.
 
