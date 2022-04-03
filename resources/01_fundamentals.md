@@ -30,18 +30,19 @@ An `Event` is a very simple concept consisting of the following elements.
 
 ### 1.1.1. Job
 
-A `Job` is the largest unit of events.
-A `Job` event can have multiple `Step`s and multiple unscheduled `Job`s as branches, and the `Job` at the top level must be scheduled.
+- A `Job` is the largest unit of events.
+- A `Job` event can have multiple `Step`s and multiple unscheduled `Job`s as branches, and the `Job` at the top level must be scheduled.
 
 ### 1.1.2. Step
 
-A `Step` is an intermediate unit of event between a `Job` and a `Task`.
-A `Step` can have multiple `Task`s and multiple `Step`s as branches.
+- A `Step` is an intermediate unit of event between a `Job` and a `Task`.
+- A `Step` can have multiple `Task`s and multiple `Step`s as branches.
 
 ### 1.1.3. Task
 
-A `Task` is the smallest unit of an `Event`.
-A `Task` can have multiple `Tasks` as branches.
+- A `Task` is the smallest unit of an `Event`.
+- A `Task` can have multiple `Tasks` as branches.
+
 The `Task` defines the specific process at each step. For example, define the following.
 
 ```dart
@@ -125,9 +126,8 @@ Since `ExecutionContext` is an important but somewhat counter-intuitive concept,
 
 ### 1.1.4. Parallel
 
-`Parallel` is an event that represents the parallel processing of tasks.
-
-`Parallel` has objects that inherit from multiple `ParallelTasks` that define specific parallel processing.
+- `Parallel` is an event that represents the parallel processing of tasks.
+- `Parallel` has objects that inherit from multiple `ParallelTasks` that define specific parallel processing.
 
 #### 1.1.4.1. Parallel Task
 
@@ -158,7 +158,8 @@ class DoSomethingParallelTask extends ParallelTask<DoSomethingParallelTask> {
 
 #### 1.1.4.2. Parallel Task and Task
 
-`Parallel` is a somewhat exceptional event, because it is part of a task, and `Step` events can be treated in the same way as the `Task` class. Indeed, the `Step` class can handle `Task` and `Parallel` classes simultaneously and maintain the order of execution as shown below.
+`Parallel` is a somewhat exceptional event, because it is part of a task, and `Step` events can be treated in the same way as the `Task` class.
+Indeed, the `Step` class can handle `Task` and `Parallel` classes simultaneously and maintain the order of execution as shown below.
 
 ```dart
 import 'dart:async';
