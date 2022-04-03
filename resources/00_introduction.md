@@ -26,6 +26,7 @@ And the development concept of this framework is "[DRY](https://en.wikipedia.org
 - There are no hard-to-understand configuration files.
 - Supports conditional branching of jobs.
 - Extensive callback functions are provided at each step.
+- Supports skipping and retrying according to user defined conditions.
 
 ## 1.3. Background
 
