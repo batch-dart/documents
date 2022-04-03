@@ -4,6 +4,7 @@
 
 - [1. Introduction](#1-introduction)
   - [1.1. Mission](#11-mission)
+  - [Features](#features)
   - [1.2. Background](#12-background)
   - [1.3. Expected Usage](#13-expected-usage)
   - [1.4. Operating Environment](#14-operating-environment)
@@ -15,6 +16,16 @@
 The goal of this project is to provide a **_high-performance_** and **_intuitive_** job scheduling framework in the Dart language ecosystem that anyone can use in the world.
 
 And the development concept of this framework is "[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)", "[KISS](https://en.wikipedia.org/wiki/KISS_principle)" and "[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)", which has been said in software engineering circles for a long time.
+
+## Features
+
+- Easy and intuitive job scheduling.
+- Scheduling in Cron format provided as standard (Customizable).
+- Powerful logging feature provided as standard (Customizable).
+- You can easily define parallel processes.
+- There are no hard-to-understand configuration files.
+- Supports conditional branching of jobs.
+- Extensive callback functions are provided at each step.
 
 ## 1.2. Background
 
