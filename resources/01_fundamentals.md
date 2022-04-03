@@ -55,8 +55,7 @@ class DoSomethingTask extends Task<DoSomethingTask> {
   DoSomethingTask({
     Function(ExecutionContext context)? onStarted,
     Function(ExecutionContext context)? onSucceeded,
-    Function(ExecutionContext context, dynamic error, StackTrace stackTrace)?
-        onError,
+    Function(ExecutionContext context, dynamic error, StackTrace stackTrace)? onError,
     Function(ExecutionContext context)? onCompleted,
     RetryConfiguration? retryConfig,
   }) : super(
@@ -94,8 +93,7 @@ As described in the comments of the previous [example](#113-task), the construct
 DoSomethingTask({
   Function(ExecutionContext context)? onStarted,
   Function(ExecutionContext context)? onSucceeded,
-  Function(ExecutionContext context, dynamic error, StackTrace stackTrace)?
-      onError,
+  Function(ExecutionContext context, dynamic error, StackTrace stackTrace)? onError,
   Function(ExecutionContext context)? onCompleted,
   RetryConfiguration? retryConfig,
 }) : super(
