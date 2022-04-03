@@ -4,10 +4,10 @@
 
 - [1. Introduction](#1-introduction)
   - [1.1. Mission](#11-mission)
-  - [Features](#features)
-  - [1.2. Background](#12-background)
-  - [1.3. Expected Usage](#13-expected-usage)
-  - [1.4. Operating Environment](#14-operating-environment)
+  - [1.2. Features](#12-features)
+  - [1.3. Background](#13-background)
+  - [1.4. Expected Usage](#14-expected-usage)
+  - [1.5. Operating Environment](#15-operating-environment)
 
 <!-- /TOC -->
 
@@ -17,7 +17,7 @@ The goal of this project is to provide a **_high-performance_** and **_intuitive
 
 And the development concept of this framework is "[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)", "[KISS](https://en.wikipedia.org/wiki/KISS_principle)" and "[YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it)", which has been said in software engineering circles for a long time.
 
-## Features
+## 1.2. Features
 
 - Easy and intuitive job scheduling.
 - Scheduling in Cron format provided as standard (Customizable).
@@ -27,7 +27,7 @@ And the development concept of this framework is "[DRY](https://en.wikipedia.org
 - Supports conditional branching of jobs.
 - Extensive callback functions are provided at each step.
 
-## 1.2. Background
+## 1.3. Background
 
 There is `Spring Batch`, my old and respected giant of the Java world, but these frameworks have too many configuration files and settings to run an application and take **_too long_** to set up. And above all, the actual implementation of the task is also **_non-intuitive_** and **_redundant_**.
 
@@ -35,7 +35,7 @@ Luckily I stumbled upon the Dart language around 2021 and was fascinated by the 
 
 And from this background, `Batch.dart` **_does not_** provide complex and bizarre configuration files, but is designed so that all settings **_can be added_** by the implementation as needed (It was not until after I released the initial build that I learned that this type of implementation using configuration files is not very common in the Dart language).
 
-## 1.3. Expected Usage
+## 1.4. Expected Usage
 
 Due to the nature of this framework, the following usage is recommended.
 
@@ -48,6 +48,6 @@ And **_not_** below.
 > Note:
 > In pub.dev, the automatic determination at the time of release of this library labels it as usable in Flutter, but it is not suitable by any stretch of the imagination.
 
-## 1.4. Operating Environment
+## 1.5. Operating Environment
 
 The Dart language is a cross-platform language, so there are no platform restrictions that limit the use of this framework. You can use as many as you like on any platform.
