@@ -42,30 +42,48 @@ class MarkdownView extends StatelessWidget {
               : Colors.grey[850],
         ),
         body: Center(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(50),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FutureBuilder(
-                    future: rootBundle.loadString(resource),
-                    builder: (BuildContext context, AsyncSnapshot snapshot) {
-                      if (!snapshot.hasData) {
-                        return const CircularProgressIndicator();
-                      }
+          child: Card(
+            elevation: 5,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(30),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FutureBuilder(
+                      future: rootBundle.loadString(resource),
+                      builder: (BuildContext context, AsyncSnapshot snapshot) {
+                        if (!snapshot.hasData) {
+                          return const CircularProgressIndicator();
+                        }
 
-                      return Column(children: _markdownLines(snapshot.data));
-                    },
-                  ),
-                ],
+                        return Column(
+                          children: _markdownLines(context, snapshot.data),
+                        );
+                      },
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 50, 0, 30),
+                      child: Text(
+                        'The content on this page is licensed under the CC BY 4.0 License, and code samples under the BSD-3 License.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.secondary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
       );
 
-  List<Widget> _markdownLines(final String resource) {
+  List<Widget> _markdownLines(
+    final BuildContext context,
+    final String resource,
+  ) {
     final lines = <Widget>[];
 
     final resources = _removeToc(resource).split('```');
@@ -85,10 +103,35 @@ class MarkdownView extends StatelessWidget {
                 ],
               ),
               styleSheet: MarkdownStyleSheet(
+                p: const TextStyle(fontSize: 16),
+                h1: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                h2: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                h3: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                h4: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
                 h1Padding: const EdgeInsets.all(10),
                 h2Padding: const EdgeInsets.all(10),
                 h3Padding: const EdgeInsets.all(10),
                 h4Padding: const EdgeInsets.all(10),
+                blockquotePadding: const EdgeInsets.all(20),
+                blockSpacing: 20,
+                blockquoteDecoration: BoxDecoration(
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.grey[200]
+                      : Colors.grey[600],
+                  borderRadius: BorderRadius.circular(2.0),
+                ),
               ),
               onTapLink: (text, href, title) async => await launch(href!),
             ),

@@ -3,13 +3,14 @@
 // modification, are permitted provided the conditions.
 
 import 'package:dashbook/dashbook.dart';
+import 'package:docs/src/document_resources.dart';
 import 'package:docs/src/view/markdown_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   final dashbook = Dashbook.dualTheme(
-    title: 'Batch.dart Documentations',
+    title: 'Documents',
     light: ThemeData(
       brightness: Brightness.light,
       typography: Typography.material2018(),
@@ -20,7 +21,7 @@ void main() {
       typography: Typography.material2018(),
       textTheme: GoogleFonts.oxygenTextTheme(Typography.whiteMountainView),
     ),
-    initWithLight: false,
+    initWithLight: true,
   );
 
   _addGettingStarted(dashbook);
@@ -29,20 +30,17 @@ void main() {
 }
 
 void _addGettingStarted(Dashbook dashbook) {
-  dashbook
-      .storiesOf('1 - Getting Started')
-      .add(
-        'Introduction',
-        (context) => const MarkdownView(
-          title: 'Introduction',
-          resource: 'assets/00_introduction.md',
-        ),
-      )
-      .add(
-        'Fundamentals',
-        (context) => const MarkdownView(
-          title: 'Fundamentals',
-          resource: 'assets/01_fundamentals.md',
+  for (final resource in documentResources) {
+    final story = dashbook.storiesOf(resource.title);
+
+    for (final page in resource.pages) {
+      story.add(
+        page.title,
+        (context) => MarkdownView(
+          title: page.title,
+          resource: page.resourcePath,
         ),
       );
+    }
+  }
 }

@@ -1,0 +1,8 @@
+allowedCopyrightHolders:
+  - 'Kato Shinya'
+  - 'the batch.dart project authors'
+allowedLicenses:
+  - 'BSD-3'
+sourceFileExtensions:
+  - 'dart'
+# ignoreFiles are empty
