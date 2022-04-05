@@ -1,6 +1,6 @@
 {
-    "name": "docs",
-    "short_name": "docs",
+    "name": "Batch.dart Documents",
+    "short_name": "Batch.dart Documents",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

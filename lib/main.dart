@@ -23,11 +23,12 @@ void main() {
     initWithLight: false,
   );
 
-  addGettingStarted(dashbook);
+  _addGettingStarted(dashbook);
+
   runApp(dashbook);
 }
 
-void addGettingStarted(Dashbook dashbook) {
+void _addGettingStarted(Dashbook dashbook) {
   dashbook
       .storiesOf('1 - Getting Started')
       .add(
