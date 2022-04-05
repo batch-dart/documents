@@ -1,11 +1,11 @@
 {
-    "name": "Batch.dart Documents",
-    "short_name": "Batch.dart Documents",
+    "name": "Documents",
+    "short_name": "Documents",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Documents for Batch.dart",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
